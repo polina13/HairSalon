@@ -48,4 +48,19 @@ public class Client {
       this.id = (int) con.createQuery(sql, true).addParameter("name", name).addParameter("stylist_id", stylist_id).executeUpdate().getKey();
     }
   }
+
+  public static Client find (int id) {
+    String sql = "SELECT * FROM clients WHERE id = :id";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).addParameter("id", id).executeAndFetchFirst(Client.class);
+    }
+  }
+
+  public void update(String newName) {
+    this.name = newName;
+    try(Connection con= DB.sql2o.open()) {
+      String sql = "UPDATE clients SET name = :name WHERE stylist_id = :stylist_id";
+      con.createQuery(sql).addParameter("name", newName).addParameter("stylist_id", stylist_id).executeUpdate();
+    }
+  }
 }

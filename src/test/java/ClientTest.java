@@ -28,19 +28,19 @@ public class ClientTest {
   //
   @Test
     public void find_findsClientInDatabase_true() {
-      Client myClient = new Client ("Sonya", 1);
+      Client myClient = new Client ("Linda", 1);
       myClient.save();
       Client savedClient = Client.find(myClient.getId());
       assertTrue(myClient.equals(savedClient));
     }
   //
-  // @Test
-  // public void update_updateClientNameInDatabase() {
-  //   Client myClient = new Client ("Sonya", 1);
-  //   myClient.save();
-  //   myClient.update("Rosie");
-  //   assertEquals("Rosie", myClient.getName());
-  // }
+  @Test
+    public void update_updateClientNameInDatabase() {
+      Client myClient = new Client ("Linda", 1);
+      myClient.save();
+      myClient.update("Rosie");
+      assertEquals("Rosie", myClient.getName());
+    }
   //
   // @Test
   // public void delete_deletesClientsNameFromDatabase() {
