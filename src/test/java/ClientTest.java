@@ -18,14 +18,14 @@ public class ClientTest {
       Client secondClient = new Client("Linda", 1);
       assertTrue(firstClient.equals(secondClient));
     }
-  //
+
   @Test
     public void save_savesClientToDatabase() {
       Client newClient = new Client("Linda", 1);
       newClient.save();
       assertTrue(Client.all().get(0).equals(newClient));
     }
-  //
+
   @Test
     public void find_findsClientInDatabase_true() {
       Client myClient = new Client ("Linda", 1);
@@ -33,7 +33,7 @@ public class ClientTest {
       Client savedClient = Client.find(myClient.getId());
       assertTrue(myClient.equals(savedClient));
     }
-  //
+
   @Test
     public void update_updateClientNameInDatabase() {
       Client myClient = new Client ("Linda", 1);
@@ -41,20 +41,20 @@ public class ClientTest {
       myClient.update("Rosie");
       assertEquals("Rosie", myClient.getName());
     }
-  //
-  // @Test
-  // public void delete_deletesClientsNameFromDatabase() {
-  //   Client myClient = new Client ("Sonya", 1);
-  //   myClient.save();
-  //   myClient.delete();
-  //   assertEquals(Client.all().size(), 0);
-  // }
+
+  @Test
+    public void delete_deletesClientsNameFromDatabase() {
+      Client myClient = new Client ("Linda", 1);
+      myClient.save();
+      myClient.delete();
+      assertEquals(Client.all().size(), 0);
+    }
 
   // @Test
   // public void viewStylists_returnsStylistForClients() {
-  //   Client myClient= new Client("Sonya");
+  //   Client myClient= new Client("Linda");
   //   myClient.save();
-  //   Stylist newStylist = new Stylist("Sonya"); myClient.getId());
+  //   Stylist newStylist = new Stylist("Linda"); myClient.getId());
   //   Stylist newStylist2 = new Stylist("Rosie"); myClient.getId());
   //   newStylist.save();
   //   newStylist2.save();
