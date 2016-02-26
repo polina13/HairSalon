@@ -49,16 +49,4 @@ public class StylistTest {
     myStylist.delete();
     assertEquals(Stylist.all().size(), 0);
   }
-
-  // @Test
-  // public void viewClients_returnsListOfClients() {
-  //   Stylist myStylist= new Stylist("Jennie Thompson");
-  //   myStylist.save();
-  //   Client newClient = new Client("Sonya"); myStylist.getId());
-  //   Client newClient2 = new Client("Rosie"); myStylist.getId());
-  //   newClient.save();
-  //   newClient2.save();
-  //   Client[] clients = new Client[] { newClient, newClient2 };
-  //   assertTrue(myStylist.viewClients().containsAll(Arrays.asList(clients)));
-  // }
 }
