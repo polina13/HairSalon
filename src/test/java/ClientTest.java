@@ -14,17 +14,17 @@ public class ClientTest {
 
   @Test
     public void equals_returnsTrueIfClientsNamesAreTheSame() {
-      Client firstClient = new Client("Sonya", 1);
-      Client secondClient = new Client("Sonya", 1);
+      Client firstClient = new Client("Linda", 1);
+      Client secondClient = new Client("Linda", 1);
       assertTrue(firstClient.equals(secondClient));
     }
   //
-  // @Test
-  // public void save_savesClientToDatabase() {
-  //   Client newClient = new Client("Sonya", 1);
-  //   newClient.save();
-  //   assertTrue(Client.all().get(0).equals(newClient));
-  // }
+  @Test
+    public void save_savesClientToDatabase() {
+      Client newClient = new Client("Linda", 1);
+      newClient.save();
+      assertTrue(Client.all().get(0).equals(newClient));
+    }
   //
   // @Test
   // public void find_findsClientInDatabase_true() {

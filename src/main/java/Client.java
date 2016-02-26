@@ -37,7 +37,15 @@ public class Client {
       return false;
     } else {
       Client newClient = (Client) otherClient;
-      return newClient.getName().equals(name);
+      return this.getName().equals(newClient.getName()) &
+      this.getId() == newClient.getId() && this.getStylistId() == newClient.getStylistId();
+    }
+  }
+
+  public void save() {
+    String sql = "INSERT INTO clients (name, stylist_id) VALUES (:name, :stylist_id)";
+    try(Connection con = DB.sql2o.open()) {
+      this.id = (int) con.createQuery(sql, true).addParameter("name", name).addParameter("stylist_id", stylist_id).executeUpdate().getKey();
     }
   }
 }
