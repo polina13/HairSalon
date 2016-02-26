@@ -1,0 +1,26 @@
+
+      <h1>$stylist.getName()</h1>
+
+      <a class="btn btn-danger" href="/stylist/$stylist.getId()/stylist-edit-form">Edit</a>
+      <form action="/delete/$stylist.getId()" method="post">
+        <button class="btn btn-warning" type="submit" name="delete">Delete</button>
+      </form>
+      <a href="/" class="btn">Go Home</a>
+
+
+      <h4>Add New Client:</h4>
+      <form action="/stylist/$stylist.getId()" method="post">
+        <label for="clientName">Name:</label>
+        <input class="form-control" type="text" name="clientName" id="clientName">
+        <br>
+        <button type="submit" id="addClient" class="btn btn-success btn-lg">Add Client</button>
+      </form>
+
+
+#if($clients)
+  <h4>Clients:</h4>
+    #foreach($client in $clients)
+    <ul>
+      <li><a href="/stylist/client/client-form">$client.getName()</a></li>
+    </ul>
+    #end

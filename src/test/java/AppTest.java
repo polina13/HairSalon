@@ -33,4 +33,6 @@ public class AppTest extends FluentTest {
     submit(".btn btn-success");
     assertThat(pageSource()).contains("Jennie Thompson");
   }
+
+  
 }
