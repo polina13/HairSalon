@@ -30,4 +30,14 @@ public class Client {
       return con.createQuery(sql).executeAndFetch(Client.class);
     }
   }
+
+  @Override
+  public boolean equals(Object otherClient) {
+    if(!(otherClient instanceof Client)) {
+      return false;
+    } else {
+      Client newClient = (Client) otherClient;
+      return newClient.getName().equals(name);
+    }
+  }
 }
