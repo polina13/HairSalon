@@ -25,7 +25,6 @@ public class App {
     String stylistName = request.queryParams("stylistName");
     Stylist newStylist = new Stylist (stylistName);
     newStylist.save();
-    // List<Stylist> stylistsList = newStylist.all();
     model.put("stylists", Stylist.all());
     model.put("template", "templates/index.vtl");
     return new ModelAndView(model,layout);
