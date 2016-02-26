@@ -25,4 +25,12 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("");
   }
+
+  @Test
+  public void stylistIsCreated() {
+    goTo ("http://localhost:4567/");
+    fill("#stylistName").with("Jennie Thompson");
+    submit(".btn btn-success");
+    assertThat(pageSource()).contains("Jennie Thompson");
+  }
 }

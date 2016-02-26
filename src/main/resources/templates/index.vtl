@@ -1,9 +1,16 @@
 <h1>Hair Salon</h1>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="stylistName">Stylist Name</label>
+    <input id="stylistName" name="stylistName" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success" id= "submitStylist">Add Stylist</button>
+</form>
 
-#if($stylists.size() > 0)
-<br>
-<br>
-<h3> Make an appointment for hair specialist:</h3>
+<h4>List of Stylists<h4>
+  <br>
+  <ul>
     #foreach($stylist in $stylists)
-      <a href="$stylist.getId()">$stylist.getName()</a>
+    <li><a href="$stylist.getId()">$stylist.getName()</a></li>
     #end
+  </ul>
