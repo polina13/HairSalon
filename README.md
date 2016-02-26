@@ -1,14 +1,28 @@
-# Java/Spark/Velocity File Structure Template
+#Hair Salon
 
-#### Date
+#### February 26th, 2016
 
-#### By Names
+#### By Polina Nenchev
 
 ## Description
 
-This is a template file structure for use in Epicodus Java/Spark/Velocity projects.
+This is an application that will illustrate hair salon by adding stylists and their clients to each stylist.
 
-[Here is a helpful list of Spark routes.] (https://dl.dropboxusercontent.com/s/gle8iwtk2ed9tg6/Screenshot%202015-07-23%2011.18.30.png)
+
+## Set up
+
+Clone this repository:
+
+Open terminal and run Postgres:
+
+$ postgres
+
+Open a new tab in terminal and create the 'hair_salon' databased:
+
+$ psql
+$ CREATE DATABASE hair_salon;
+$ psql hair_salon < hair.salon.sql
+
 
 ## How To Use
 
@@ -19,10 +33,6 @@ OR:
 
 * Fork this repository from GitHub and rename it
 
-## Please Make This Better
-
-Please fork this repository and send a pull request if something in here could be better.
-
 ## Technologies Used
 
-Java, Spark, JUnit, FluentLenium, Velocity, Bootstrap
+Java, Spark, JUnit, FluentLenium, Velocity, Bootstrap, Database
