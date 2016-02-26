@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.List;
 import org.sql2o.*;
 
 public class Stylist {
@@ -24,6 +24,7 @@ public class Stylist {
       return con.createQuery(sql).executeAndFetch(Stylist.class);
     }
   }
+
 
   @Override
   public boolean equals(Object otherStylist) {
@@ -61,6 +62,15 @@ public class Stylist {
     try(Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM stylists WHERE id = :id";
       con.createQuery(sql).addParameter("id", id).executeUpdate();
+    }
+  }
+
+  public List <Client> getClients() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients WHERE stylist_id = :id";
+      return con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetch(Client.class);
     }
   }
 }
