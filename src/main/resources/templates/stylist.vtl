@@ -8,7 +8,7 @@
 
 
 <h4>Add New Client:</h4>
-  <!-- <a class ="btn btn-primary" href="/client/$client.getId()/update">Update client's name</a> -->
+
   <form action="/stylist/$stylist.getId()" method="post">
     <label for="clientName">Name:</label>
     <input class="form-control" type="text" name="clientName" id="clientName">
@@ -21,7 +21,7 @@
   <h4>Clients:</h4>
     <ul>
     #foreach($client in $clients)
-      <li><a href="/stylist/client/clients">$client.getName()</a></li>
+      <li><a href="/stylist/$client.getId()/update-clients">$client.getName()</a></li>
     #end
     </ul>
 #else
