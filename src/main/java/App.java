@@ -74,12 +74,10 @@ public class App {
 
   post("/stylist/:id/update", (request, response) -> {
     HashMap<String, Object> model = new HashMap<String, Object>();
-    // int id =Integer.parseInt(request.params(":id"));
     Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
     String stylistName = request.queryParams("stylistName");
     stylist.update(stylistName);
     List<Client> clients = stylist.getClients();
-    // model.put("id", id);
     model.put("stylist", stylist);
     model.put("clients", clients);
     model.put("template", "templates/stylist.vtl");
@@ -95,24 +93,17 @@ public class App {
     return new ModelAndView(model, layout);
   }, new VelocityTemplateEngine());
 
-  //
-  // get("/clients", (request, response) -> {
-  //     HashMap<String, Object>model= new HashMap<String, Object>();
-  //     model.put("stylists", Stylist.all());
-  //     model.put("clients", Client.all());
-  //     model.put("template", "templates/clients.vtl");
-  //     return new ModelAndView(model,layout);
-  //   }, new VelocityTemplateEngine());
-  //
-  // post("/clients", (request, response) -> {
-  //   HashMap<String, Object> model = new HashMap<String, Object>();
-  //   String clientName= request.queryParams("clientName");
-  //   Client newClient = new Client(clientName, 1);
-  //   newClient.save();
-  //   model.put("clients", Client.all());
-  //   model.put("template", "templates/clients.vtl");
-  //   return new ModelAndView(model, layout);
-  //   }, new VelocityTemplateEngine());
+  post("/delete/:id", (request, reponse) -> {
+    HashMap<String, Object> model = new HashMap<String, Object>();
+    Client client = Client.find(Integer.parseInt(request.params(":id")));
+    // Stylist stylist = Stylist.find(client.geId());
+    client.delete();
+    model.put("clients", Client.all());
+    model.put("template","templates/index.vtl");
+    return new ModelAndView(model, layout);
+  }, new VelocityTemplateEngine());
+
+
   //
   // get("/clients/:id" , (request, response) -> {
   //   HashMap<String, Object> model = new HashMap<String, Object>();

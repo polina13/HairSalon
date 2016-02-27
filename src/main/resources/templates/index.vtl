@@ -1,4 +1,9 @@
-<h1>Hair Salon</h1>
+<div class ="container">
+  <div class ="jumbotron">
+    <h1>Hair Salon</h1>
+  </div>
+</div>
+
 <form action="/" method="post">
   <div class="form-group">
     <label for="stylistName">Stylist Name</label>
@@ -7,10 +12,16 @@
   <button type="submit" class="btn btn-success" id= "submitStylist">Add Stylist</button>
 </form>
 
-<h4>List of Stylists<h4>
+  <h4>List of Stylists<h4>
+
   <br>
   <ul>
     #foreach($stylist in $stylists)
-    <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+      <li><a href="/stylist/$stylist.getId()">$stylist.getName()</a></li>
+    #end
+  </ul>
+  <ul>
+    #foreach($client in $clients)
+      <li><a href="/client/$client.getId()">$client.getName()</a></li>
     #end
   </ul>
