@@ -1,0 +1,15 @@
+<h2>Update $client.getName()</h2>
+
+<!-- <form class="form-group" action="/clients/$client.getId()/updated" method="post">
+  <label for="update">Update client Name</label>
+  <input type="text" name="update" required>
+  <button type="submit" class="btn btn-success">Update</button>
+</form> -->
+
+<p>Clients for this stylist are:</p>
+#foreach($stylist in $stylists)
+  <p>$stylist.getName()</p>
+
+#end
+
+<a href="/" class="btn btn-primary">Go Home</a>

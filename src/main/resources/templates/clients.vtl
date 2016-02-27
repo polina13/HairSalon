@@ -1,0 +1,7 @@
+<h1>All Clients:</h1>
+
+#foreach($client in $clients)
+<h3><a href="/clients/$client.getId()">$client.getName()</a></h3>
+#end
+
+<a href="/" class="btn btn-primary">Go Home</a>
