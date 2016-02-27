@@ -64,23 +64,4 @@ public class AppTest extends FluentTest {
     goTo(categoryPath);
     assertThat(!(pageSource()).contains("Jennie Thompson"));
   }
-
-  // @Test
-  // public void addsClientsToStylistPage() {
-  //   Stylist newStylist = new Stylist("Jennie Thompson");
-  //   newStylist.save();
-  //
-  // }
-  //
-  // @Test
-  // public void stylistIsUpdate() {
-  //   Stylist stylist = new Stylist("Jennie Thompson");
-  //   stylist.save();
-  //   stylist.update("Polina Nenchev");
-  //   String categoryPath = String.format("http://localhost://4567", stylist.getId());
-  //   goTo(categoryPath);
-  //   assertThat(pageSource()).contains("Polina Nenchev");
-  // }
-
-
 }
