@@ -17,11 +17,10 @@ Open terminal and run Postgres:
 
 $ postgres
 
-Open a new tab in terminal and create the 'hair_salon' databased:
+Open a new tab in terminal and create the 'hair_salon' database:
 
-$ psql
-$ CREATE DATABASE hair_salon;
-$ psql hair_salon < hair.salon.sql
+* $ psql
+* $ CREATE DATABASE hair_salon;
 
 
 ## How To Use
