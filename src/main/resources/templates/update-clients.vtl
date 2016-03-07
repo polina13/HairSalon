@@ -1,13 +1,19 @@
+<!-- #if($client.getStylists())
+  <p>Listed are the stylists for this band:</p>
+  <ul>
+    #foreach($venue in $band.getVenues())
+      <li><a href="/venues/$venue.getId()">$venue.getName()</a></li>
+    #end
+  </ul>
+#end -->
+
+<!-- 
 <h1>Update $client.getName() </h1>
 
-
-
-<form action="/client/$client.getId()/update-clients" method="post">
+<form action="/client/$client.getId()/updateName" method="post">
   <div class="form-group">
-    <label for="clientName">client Name</label>
-    <input id="clientName" name="clientName" type="text" class="form-control">
+    <label for="updatedName">client Name</label>
+    <input id="updatedName" name="updatedName" type="text" class="form-control">
   </div>
   <button type="submit" class="btn btn-success" id= "submitclient">Update Client</button>
-</form>
-
-<a href="/" class="btn btn-success">Go Home</a>
+</form> -->
