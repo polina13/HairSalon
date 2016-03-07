@@ -1,0 +1,15 @@
+
+<div class="jumbotron">
+  <h1>Editing $client.getName()...</h1>
+    <a class="btn btn-warning" href="/stylist/$client.getStylistId()">Go Back</a>
+    <form action="/delete/client/$client.getId()" method="post">
+      <button class="btn btn-danger" id="deleteClient" type="submit">Delete</button>
+    </form>
+</div>
+
+<form action="/edited/client/$client.getId()" method="post">
+  <label for="client-update-name">Name:</label>
+  <input class="form-control" type="text" name="client-update-name" id="client-update-name">
+  <br>
+  <button type="submit" id="editClient" class="btn btn-success btn-lg">Submit</button>
+</form>

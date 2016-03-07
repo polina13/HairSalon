@@ -1,13 +1,10 @@
 <h1>$client.getName()</h1>
 
-<a class="btn btn-danger" href="/client/$client.getId()/update">Update client</a>
+<a class="btn btn-danger" href="/client/$client.getId()/client-updateName">Update client</a>
 <form action="/delete/$client.getId()" method="post">
   <button class="btn btn-warning" type="submit" name="delete">Delete client</button>
 </form>
-<a href="/" class="btn btn-success">Go Home</a>
 
-<p>Clients for this stylist are:</p>
-#foreach($stylist in $stylists)
-  <p>$stylist.getName()</p>
-
-#end
+<h3><a class="btn btn-success" href='/edit/$client.getId()'>Update Client</a></p>
+<h3><a class="btn btn-success" href='/delete/$client.getId()'>Delete Client</a></p>
+<h3><a class="btn btn-info" href='/'>Home Page</a></p>
